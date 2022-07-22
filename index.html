@@ -57,7 +57,7 @@
 
                                 <div class="my-thumbnails position-relative">
 
-                                    <div class="my-thumbnail" v-for="(image, imageIndex) in images" v-bind:class="imageActive(imageIndex)">
+                                    <div class="my-thumbnail" v-for="(image, imageIndex) in images" v-bind:class="imageActive(imageIndex)" v-on:click="clickToShow(imageIndex)">
                                         <img class="img-fluid" v-bind:src="image.url" v-bind:alt="'Thumbnail of ' + image.title + ' picture'">
                                     </div>
     

@@ -52,6 +52,18 @@ var vueApp = new Vue({
             } else {
                 this.imageCounter++;
             }
+        },
+        clickToShow(imgShow) {
+            this.imageCounter = imgShow;
+        },
+        startAutoplay() {
+            let autoplay = this;
+            this.autoplay = setInterval(function(){
+                autoplay.nextImage()
+            }, 3000);
         }
+    },
+    mounted() {
+        this.startAutoplay();
     }
 });
