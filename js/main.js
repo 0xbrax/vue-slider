@@ -32,11 +32,25 @@ var vueApp = new Vue({
         ]
     },
     methods: {
-        imageActive(image) {
-            if (image == this.imageCounter) {
+        imageActive(imgIndex) {
+            if (imgIndex == this.imageCounter) {
                 return 'active';
             } else {
                 return '';
+            }
+        },
+        prevImage() {
+            if (this.imageCounter == 0) {
+                this.imageCounter = this.images.length - 1
+            } else {
+                this.imageCounter--;
+            }
+        },
+        nextImage() {
+            if (this.imageCounter == (this.images.length - 1)) {
+                this.imageCounter = 0;
+            } else {
+                this.imageCounter++;
             }
         }
     }
