@@ -61,6 +61,10 @@ var vueApp = new Vue({
             this.autoplay = setInterval(function(){
                 autoplay.nextImage()
             }, 3000);
+        },
+        stopAutoplay() {
+            clearInterval(this.autoplay);
+            this.autoplay = undefined;
         }
     },
     mounted() {
