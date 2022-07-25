@@ -10,6 +10,10 @@ div.my-carousel-container{
     /* background-color: aquamarine; */
 }
 
+div.my-carousel-container:focus-visible {
+    outline: 0;
+}
+
 div.my-carousel-images{
     /* background-color: cadetblue; */
     height: 540px;

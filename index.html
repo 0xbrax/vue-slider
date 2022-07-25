@@ -32,7 +32,7 @@
                         </div>
     
                         <div class="col-12 p-5">
-                            <div class="my-carousel-container d-flex flex-column mx-5" id="my-carousel" v-on:mouseover="stopAutoplay()" v-on:mouseleave="startAutoplay()" v-on:keydown.left="prevImage()" v-on:keydown.right="nextImage()" tabindex="0">
+                            <div class="my-carousel-container d-flex flex-column mx-5" id="my-carousel" v-on:mouseover="stopAutoplay()" v-on:mouseleave="startAutoplay()" v-on:focus="stopAutoplay()" v-on:blur="startAutoplay()" v-on:keydown.left="prevImage()" v-on:keydown.right="nextImage()" tabindex="0">
                                 <div class="my-carousel-images">
 
                                     <div class="my-carousel-item" v-for="(image, imageIndex) in images" v-bind:class="imageActive(imageIndex)">
@@ -85,7 +85,11 @@
             </div>
         </main>
 
+        
         <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <!--
+        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+        -->
         <script type="text/javascript" src="js/main.js"></script>
     </body>
 </html>

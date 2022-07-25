@@ -2,6 +2,7 @@ var vueApp = new Vue({
     el: '#vue-app',
     data: {
         imageCounter: 0,
+        autoplay: undefined,
 
         images: [
             {
@@ -57,10 +58,11 @@ var vueApp = new Vue({
             this.imageCounter = imgShow;
         },
         startAutoplay() {
-            let autoplay = this;
-            this.autoplay = setInterval(function(){
-                autoplay.nextImage()
-            }, 3000);
+            if (this.autoplay == undefined) {
+                this.autoplay = setInterval(() => {
+                    this.nextImage();
+                }, 3000);
+            }
         },
         stopAutoplay() {
             clearInterval(this.autoplay);
